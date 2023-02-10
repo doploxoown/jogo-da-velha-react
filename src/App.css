@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+min-height: 100vh;
+min-width: 100vw;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.board-game {
+  width: 400px;
+  height: 400px;
+  background: white;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.board-game span {
+  width: 33.33333%;
+  height: 33.33333%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 30px;
+  position: relative;
+  outline: 1px solid #ccc;
+  }
+
+.board-game span:hover {
+background: #f6f6f6;
+cursor: pointer;
+}
+
+.board-game span::after {
+content: '';
+display: none;
+width: 180%;
+height: 10px;
+background: black;
+position: absolute;
+z-index: 100;
+}
+
+.board-game span.horizontal::after {
+display: block;  
+}
+
+.board-game span.vertical::after {
+display: block;
+rotate: 90deg;
+}
+
+.board-game span.diagonal-1::after {
+display: block;
+rotate: 45deg;
+}
+
+.board-game span.diagonal-2::after {
+display: block;
+rotate: 135deg;
+}
+
+abbr {
+font-size: 20px;
+color: rgba(0, 0, 0, 0.5);
+position: absolute;
+top: 10px;
+left: 10px;
+}
